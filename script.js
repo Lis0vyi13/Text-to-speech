@@ -1,6 +1,7 @@
 let synth = new SpeechSynthesisUtterance();
-let select = document.querySelector("select");
 let voices = speechSynthesis.getVoices();
+
+let select = document.querySelector("select");
 let form = document.querySelector("form");
 let inputText = document.querySelector("textarea");
 
@@ -12,7 +13,9 @@ function populateVoices(voices) {
 
 speechSynthesis.onvoiceschanged = () => {
   voices = speechSynthesis.getVoices();
-  synth.voice = voices[select.value - 1];
+  console.log(voices);
+
+  synth.voice = voices[select.value];
   populateVoices(voices);
 };
 
@@ -22,6 +25,8 @@ select.addEventListener("change", function (e) {
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
+  console.log(select.value);
+
   synth.text = inputText.value;
   window.speechSynthesis.speak(synth);
 });

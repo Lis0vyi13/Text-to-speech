@@ -29,7 +29,6 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 600px;
 }
 .textarea,
 #voices {
@@ -40,16 +39,13 @@ h1 {
   color: #e7e09f;
 }
 .textarea {
-  margin-top: 50px;
   width: 100%;
   padding: 15px 15px 150px;
   resize: none;
   font-size: 16px;
+  box-sizing: border-box;
 }
 
-.speech-images {
-  margin-top: 50px;
-}
 .speech-images img:nth-child(1) {
   margin-right: -27px;
   margin-bottom: -10px;
@@ -81,11 +77,33 @@ select {
   appearance: none;
   pointer-events: all;
 }
+@media (min-width: 1px) {
+  .speech-form {
+    width: 100%;
+  }
+  .textarea {
+    margin-top: 25px;
+  }
+  .speech-images {
+    margin-top: 25px;
+  }
+}
+@media (min-width: 650px) {
+  .speech-form {
+    width: 633px;
+  }
+  .textarea {
+    margin-top: 50px;
+  }
+  .speech-images {
+    margin-top: 50px;
+  }
+}
 
 .select {
-  width: max(100%, 633px);
   position: relative;
   pointer-events: none;
+  width: 100%;
 }
 .select img {
   position: absolute;
