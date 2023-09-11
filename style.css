@@ -1,0 +1,98 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:500&display=swap);
+* {
+  font-family: "Montserrat", "sans-serif";
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+}
+body {
+  background: linear-gradient(to bottom, #1c222a, #263135, #37403f, #4a4f4b, #5e5e5a);
+  height: 100vh;
+  color: #bac8c3;
+}
+::selection {
+  background: #e7e09f;
+}
+h1 {
+  font-size: 23px;
+}
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.speech-form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+}
+.textarea,
+#voices {
+  outline: none;
+  border: 2px solid #616363;
+  border-radius: 3px;
+  background: transparent;
+  color: #e7e09f;
+}
+.textarea {
+  margin-top: 50px;
+  width: 100%;
+  padding: 15px 15px 150px;
+  resize: none;
+  font-size: 16px;
+}
+
+.speech-images {
+  margin-top: 50px;
+}
+.speech-images img:nth-child(1) {
+  margin-right: -27px;
+  margin-bottom: -10px;
+}
+.play,
+select {
+  cursor: pointer;
+}
+
+.play {
+  background-color: #fe2e62;
+  transition: background-color 0.3s;
+  margin-top: 30px;
+  padding: 15px 45px;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+}
+.play:hover {
+  background-color: #a61f41;
+}
+
+#voices {
+  margin-top: 20px;
+  width: 100%;
+  height: 35px;
+  padding: 5px 5px 5px 10px;
+  font-size: 16px;
+  appearance: none;
+  pointer-events: all;
+}
+
+.select {
+  width: max(100%, 633px);
+  position: relative;
+  pointer-events: none;
+}
+.select img {
+  position: absolute;
+  top: 45%;
+  right: 10px;
+}
+option {
+  background-color: #e7e09f;
+  color: #000;
+}
