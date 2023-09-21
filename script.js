@@ -13,7 +13,6 @@ function populateVoices(voices) {
 
 speechSynthesis.onvoiceschanged = () => {
   voices = speechSynthesis.getVoices();
-  console.log(voices);
 
   synth.voice = voices[select.value];
   populateVoices(voices);
@@ -25,7 +24,6 @@ select.addEventListener("change", function (e) {
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-  console.log(select.value);
 
   synth.text = inputText.value;
   window.speechSynthesis.speak(synth);
