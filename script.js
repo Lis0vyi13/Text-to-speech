@@ -13,7 +13,6 @@ function populateVoices(voices) {
 
 speechSynthesis.onvoiceschanged = () => {
   voices = speechSynthesis.getVoices();
-
   synth.voice = voices[select.value];
   populateVoices(voices);
 };
