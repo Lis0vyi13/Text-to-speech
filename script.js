@@ -16,14 +16,17 @@ speechSynthesis.onvoiceschanged = () => {
   synth.voice = voices[select.value];
   populateVoices(voices);
 };
-
+if (voices.length > 0) {
+  synth.voice = voices[0]; // Вы можете выбрать первый доступный голос или любой другой по умолчанию
+  synth.lang = synth.voice.lang;
+}
 select.addEventListener("change", function (e) {
   synth.voice = voices[select.value];
+  synth.lang = synth.voice.lang;
 });
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-
   synth.text = inputText.value;
   window.speechSynthesis.speak(synth);
 });

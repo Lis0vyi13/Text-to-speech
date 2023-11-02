@@ -5,10 +5,16 @@
   padding: 0;
   font-weight: 500;
 }
+
 body {
   background: linear-gradient(to bottom, #1c222a, #263135, #37403f, #4a4f4b, #5e5e5a);
-  height: 100vh;
+  height: 100%;
   color: #bac8c3;
+}
+@media (orientation: portrait) {
+  body {
+    height: 100vh;
+  }
 }
 ::selection {
   background: #e7e09f;
@@ -63,6 +69,7 @@ select {
   border: 0;
   border-radius: 5px;
   color: #fff;
+  margin-bottom: 20px;
 }
 .play:hover {
   background-color: #a61f41;
