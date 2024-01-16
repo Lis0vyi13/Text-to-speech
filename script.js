@@ -1,9 +1,9 @@
 let synth = new SpeechSynthesisUtterance();
 let voices = speechSynthesis.getVoices();
 
-let select = document.querySelector("select");
-let form = document.querySelector("form");
-let inputText = document.querySelector("textarea");
+let select = document.querySelector('select');
+let form = document.querySelector('form');
+let inputText = document.querySelector('textarea');
 
 function populateVoices(voices) {
   voices.forEach((voice, index) => {
@@ -17,15 +17,15 @@ speechSynthesis.onvoiceschanged = () => {
   populateVoices(voices);
 };
 if (voices.length > 0) {
-  synth.voice = voices[0]; // Вы можете выбрать первый доступный голос или любой другой по умолчанию
+  synth.voice = voices[0];
   synth.lang = synth.voice.lang;
 }
-select.addEventListener("change", function (e) {
+select.addEventListener('change', function (e) {
   synth.voice = voices[select.value];
   synth.lang = synth.voice.lang;
 });
 
-form.addEventListener("submit", function (e) {
+form.addEventListener('submit', function (e) {
   e.preventDefault();
   synth.text = inputText.value;
   window.speechSynthesis.speak(synth);
